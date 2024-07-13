@@ -17,27 +17,27 @@ def portscan(port):
                 if banner:
                     print(f"  Banner: {banner}")
                 else:
-                    print("  Banner: No banner received")
+                    print("  Banner: Banner bilgisi bulunamadı")
             except:
-                print("  Banner: No banner received")
+                print("  Banner: Banner bilgisi bulunamadı")
             try:
                 protocol = s.recv(1024)
                 protocol = protocol.decode().strip()
                 if protocol:
                     print(f"  Protocol: {protocol}")
                 else:
-                    print("  Protocol: Unknown")
+                    print("  Protocol: Bilinmiyor")
             except:
-                print("  Protocol: Unknown")
+                print("  Protocol: Bilinmiyor")
             try:
                 version = s.recv(1024)
                 version = version.decode().strip()
                 if version:
                     print(f"  Version: {version}")
                 else:
-                    print("  Version: Unknown")
+                    print("  Version: Bilinmiyor")
             except:
-                print("  Version: Unknown")
+                print("  Version: Bilinmiyor")
         con.close()
     except:
         pass
@@ -48,9 +48,9 @@ def threader():
         portscan(worker)
         q.task_done()
 
-target = input('Enter the host to be scanned: ')
+target = input('Taramak istediğiniz adresi giriniz: ')
 t_IP = socket.gethostbyname(target)
-print ('Starting scan on host: ', t_IP)
+print ('Bu IP adresinde arama başlatıldı: ', t_IP)
 
 startTime = time.time()
 
@@ -61,12 +61,12 @@ for x in range(100):
     t.daemon = True
     t.start()
 
-start_port = int(input("Enter the Starting Number: "))
-end_port = int(input("Enter the Last Number: "))
+start_port = int(input("Başlangıç port numarası girin: "))
+end_port = int(input("Bitiş port numarası girin: "))
 
 for worker in range(start_port, end_port):
     q.put(worker)
 
 q.join()
 
-print('Time taken:', time.time() - startTime)
+print('Harcanan Süre', time.time() - startTime)
