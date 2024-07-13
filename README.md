@@ -28,11 +28,20 @@ Program, açık portları ve bu portlarda çalışan hizmetlerle ilgili bilgiler
 ## Örnek Çıktı
 Taranacak ana bilgisayarı girin: example.com Ana bilgisayarda tarama başlatılıyor: 192.0.2.1
 
-Port 22 açık Banner: SSH-2.0-OpenSSH_7.2p2 Ubuntu 4ubuntu2.10 Protokol: SSH Sürümü: OpenSSH_7.2p2 Ubuntu 4ubuntu2.10
+Port 22 open
+Banner: SSH-2.0-OpenSSH_7.2p2 Ubuntu 4ubuntu2.10 
+Protokol: SSH 
+Sürüm: OpenSSH_7.2p2 Ubuntu 4ubuntu2.10
 
-Port 80 açık Banner: Apache/2.4.7 (Ubuntu) Protokol: HTTP Sürümü: Apache/2.4.7 (Ubuntu)
+Port 80 open
+Banner: Apache/2.4.7 (Ubuntu)
+Protokol: HTTP 
+Sürüm: Apache/2.4.7 (Ubuntu)
 
-Port 443 açık Banner: Apache/2.4.7 (Ubuntu) Protokol: HTTPS Sürümü: Apache/2.4.7 (Ubuntu)
+Port 443 open
+Banner: Apache/2.4.7 (Ubuntu)
+Protokol: HTTPS 
+Sürüm: Apache/2.4.7 (Ubuntu)
 
 Harcanan süre: 2,53 saniye
 
@@ -41,7 +50,7 @@ Harcanan süre: 2,53 saniye
 ### Python
 * Python 3.x
 ### Modüller
-* 'soket' modülü
+* 'socket' modülü
 
 ## Yazar
 [Burhan]
