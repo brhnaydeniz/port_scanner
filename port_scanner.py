@@ -67,6 +67,11 @@ end_port = int(input("Bitiş port numarası girin: "))
 for worker in range(start_port, end_port):
     q.put(worker)
 
-q.join()
+try:
+    q.join()
+except KeyboardInterrupt:
+    print("\nProgram kullanıcı tarafından sonlandırıldı.")
+    print('Harcanan Süre', time.time() - startTime)
+    exit(0)
 
 print('Harcanan Süre', time.time() - startTime)
