@@ -24,20 +24,20 @@ def portscan(port):
                 protocol = s.recv(1024)
                 protocol = protocol.decode().strip()
                 if protocol:
-                    print(f"  Protocol: {protocol}")
+                    print(f"  Protokol: {protocol}")
                 else:
-                    print("  Protocol: Bilinmiyor")
+                    print("  Protokol: Bilinmiyor")
             except:
-                print("  Protocol: Bilinmiyor")
+                print("  Protokol: Bilinmiyor")
             try:
                 version = s.recv(1024)
                 version = version.decode().strip()
                 if version:
-                    print(f"  Version: {version}")
+                    print(f"  Sürüm: {version}")
                 else:
-                    print("  Version: Bilinmiyor")
+                    print("  Sürüm: Bilinmiyor")
             except:
-                print("  Version: Bilinmiyor")
+                print("  Sürüm: Bilinmiyor")
         con.close()
     except:
         pass
