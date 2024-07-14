@@ -7,19 +7,24 @@ print_lock = threading.Lock()
 
 def portscan(port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(10)
     try:
         con = s.connect((target, port))
         with print_lock:
             print(f"Port {port} is open")
             try:
+                s.settimeout(5)  
                 banner = s.recv(1024)
                 banner = banner.decode().strip()
                 if banner:
                     print(f"  Banner: {banner}")
                 else:
                     print("  Banner: Banner bilgisi bulunamadı")
+            except socket.timeout:
+                print("  Banner: Banner bilgisi bulunamadı")
             except:
                 print("  Banner: Banner bilgisi bulunamadı")
+      
             try:
                 protocol = s.recv(1024)
                 protocol = protocol.decode().strip()
@@ -50,14 +55,14 @@ def threader():
 
 target = input('Taramak istediğiniz adresi giriniz: ')
 t_IP = socket.gethostbyname(target)
-print ('Bu IP adresinde arama başlatıldı: ', t_IP)
+print('Bu IP adresinde arama başlatıldı: ', t_IP)
 
 startTime = time.time()
 
 q = Queue()
 
 for x in range(100):
-    t = threading.Thread(target = threader)
+    t = threading.Thread(target=threader)
     t.daemon = True
     t.start()
 
