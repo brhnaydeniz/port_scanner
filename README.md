@@ -26,7 +26,10 @@ Port Scanner, hedef ana bilgisayar üzerinde açık portları tarayan ve bu port
 Program, açık portları ve bu portlarda çalışan hizmetlerle ilgili bilgiler de dahil olmak üzere tarama sonuçlarını görüntüler.
 
 ## Örnek Çıktı
-Taranacak ana bilgisayarı girin: example.com Ana bilgisayarda tarama başlatılıyor: 192.0.2.1
+Taramak istediğiniz adresi giriniz: example.com
+Bu IP adresinde arama başlatıldı: 192.0.2.1
+Başlangıç port numarası girin: 1
+Bitiş port numarası girin: 443
 
 Port 22 open
 Banner: SSH-2.0-OpenSSH_7.2p2 Ubuntu 4ubuntu2.10 
